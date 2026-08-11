@@ -46,7 +46,7 @@ do
             break;
 
         case "2":
-            Console.WriteLine($"el total de productos es {productTotal}y el total del percio es ${countTotal}");
+            Console.WriteLine($"el total de los productos es {productTotal} y el total del percio es ${countTotal}");
             Console.ReadLine();
                 break;
         default:
@@ -57,3 +57,29 @@ do
     }
 }
 while (option != "2");
+
+// etapa 4: descuento por monto
+ decimal subTotal = countTotal;
+decimal discont = 0;
+
+const decimal discont10 = 0.10m;
+const decimal discont5 = 0.05m;
+
+if (subTotal > 50000)
+{
+    discont = subTotal * discont10;
+}
+else if (subTotal > 20000)
+{
+    discont = subTotal * discont5;
+}
+else
+{
+    Console.WriteLine("no hay descuento");
+}
+decimal finalTotal = subTotal - discont;
+
+Console.WriteLine($"el total es ${subTotal}");
+Console.WriteLine($"el descuento es ${discont}");
+Console.WriteLine($"el total final es ${finalTotal}");
+Console.ReadLine();
