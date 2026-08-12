@@ -78,8 +78,39 @@ else
     Console.WriteLine("no hay descuento");
 }
 decimal finalTotal = subTotal - discont;
-
 Console.WriteLine($"el total es ${subTotal}");
 Console.WriteLine($"el descuento es ${discont}");
 Console.WriteLine($"el total final es ${finalTotal}");
+Console.ReadLine();
+
+// etapa 5:
+string optionPayment;
+do
+{
+    Console.WriteLine(" Medio de pago:");
+    Console.WriteLine("1 - Efectivo");
+    Console.WriteLine("2 - Débito");
+    Console.WriteLine("3 - Crédito");
+    Console.Write("escoja una opcion:");
+    optionPayment = Console.ReadLine();
+
+    switch (optionPayment)
+    {
+        case "1":
+            finalTotal = finalTotal - finalTotal * discont10;
+            break;
+        case "2":
+            break;
+        case "3":
+            finalTotal = finalTotal * 1.15m;
+            break;
+        default:
+            Console.WriteLine("opcion invalida, elige una opcion valida");
+            Console.ReadLine();
+            break;
+    }
+}
+while (optionPayment != "1" && optionPayment != "2" && optionPayment != "3");
+
+Console.WriteLine($"Total a pagar: ${finalTotal}");
 Console.ReadLine();
