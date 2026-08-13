@@ -83,7 +83,7 @@ Console.WriteLine($"el descuento es ${discont}");
 Console.WriteLine($"el total final es ${finalTotal}");
 Console.ReadLine();
 
-// etapa 5:
+// etapa 5: medio de pago
 string optionPayment;
 do
 {
@@ -113,4 +113,33 @@ do
 while (optionPayment != "1" && optionPayment != "2" && optionPayment != "3");
 
 Console.WriteLine($"Total a pagar: ${finalTotal}");
+Console.ReadLine();
+
+// etapa 6: ticket final
+
+for (int i = 0; i < 30; i++)
+{
+    Console.Write("-");
+}
+Console.WriteLine();
+Console.WriteLine($"{marketName}");
+
+for (int i = 0; i < 30; i++)
+{
+    Console.Write("-");
+}
+Console.WriteLine();
+
+Console.WriteLine($"Cajero: {userName}");
+Console.WriteLine($"Productos: {productTotal}");
+Console.WriteLine($"Subtotal: ${subTotal}");
+Console.WriteLine($"Descuento: ${discont}");
+Console.WriteLine($"TOTAL: ${finalTotal}");
+
+for (int i = 0; i < 30; i++)
+{
+    Console.Write("-");
+}
+Console.WriteLine();
+
 Console.ReadLine();
