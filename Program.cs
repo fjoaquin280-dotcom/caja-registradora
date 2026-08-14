@@ -85,6 +85,7 @@ Console.ReadLine();
 
 // etapa 5: medio de pago
 string optionPayment;
+decimal discontTotal = 0;
 do
 {
     Console.WriteLine(" Medio de pago:");
@@ -97,6 +98,7 @@ do
     switch (optionPayment)
     {
         case "1":
+            discontTotal = discont + finalTotal * discont10;
             finalTotal = finalTotal - finalTotal * discont10;
             break;
         case "2":
@@ -133,7 +135,7 @@ Console.WriteLine();
 Console.WriteLine($"Cajero: {userName}");
 Console.WriteLine($"Productos: {productTotal}");
 Console.WriteLine($"Subtotal: ${subTotal}");
-Console.WriteLine($"Descuento: ${discont}");
+Console.WriteLine($"Descuento: ${discontTotal}");
 Console.WriteLine($"TOTAL: ${finalTotal}");
 
 for (int i = 0; i < 30; i++)
@@ -141,5 +143,4 @@ for (int i = 0; i < 30; i++)
     Console.Write("-");
 }
 Console.WriteLine();
-
 Console.ReadLine();
